@@ -4,14 +4,12 @@ const Header = () => {
   return (
     <header className="bg-background border-b border-border">
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-            <div className="w-4 h-4 bg-primary-foreground rounded-full"></div>
-          </div>
-          <div>
-            <h1 className="text-xl font-bold text-primary">Stratvision</h1>
-            <p className="text-xs text-muted-foreground -mt-1">Consulting</p>
-          </div>
+        <div className="flex items-center">
+          <img 
+            src="/lovable-uploads/74c99a14-b0c5-48e5-83e2-a9340b45084e.png" 
+            alt="Stratvision Consulting Logo" 
+            className="h-12 w-auto"
+          />
         </div>
         
         <div className="hidden md:flex items-center space-x-8">
