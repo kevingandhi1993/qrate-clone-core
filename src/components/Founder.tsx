@@ -21,7 +21,7 @@ const Founder = () => {
             </div>
             
             <div className="order-1 md:order-2 flex justify-center">
-              <div className="w-80 h-80 rounded-lg overflow-hidden shadow-lg flex items-center justify-center bg-blue-500">
+              <div className="w-80 h-80 rounded-lg overflow-hidden shadow-lg flex items-center justify-center bg-muted">
                 <img 
                   src="/lovable-uploads/8c804212-06d5-4dc6-a19e-b9ec5f395b82.png"
                   alt="Kevin Gandhi - Founder & Managing Partner of StratVision Consulting"
