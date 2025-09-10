@@ -24,13 +24,12 @@ const Founder = () => {
             </div>
             
             <div className="order-1 md:order-2 flex justify-center">
-              <div className="w-80 h-80 bg-muted rounded-lg border-2 border-dashed border-border flex items-center justify-center">
-                <div className="text-center text-muted-foreground">
-                  <div className="w-16 h-16 bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <div className="w-8 h-8 bg-primary/40 rounded-full"></div>
-                  </div>
-                  <p className="text-sm">Add Founder's Photo Here</p>
-                </div>
+              <div className="w-80 h-80 rounded-lg overflow-hidden shadow-lg">
+                <img 
+                  src="/lovable-uploads/8c804212-06d5-4dc6-a19e-b9ec5f395b82.png"
+                  alt="Kevin Gandhi - Founder & Managing Partner of StratVision Consulting"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
