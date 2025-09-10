@@ -17,22 +17,30 @@ const Contact = () => {
           
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-              <div className="space-y-4">
+              <h3 className="text-2xl font-semibold mb-6">Contact Stratvision</h3>
+              <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold mb-2">Email</h4>
-                  <p className="text-hero-foreground/90">info@stratvisionconsulting.com</p>
+                  <h4 className="font-semibold mb-2">Website</h4>
+                  <p className="text-hero-foreground/90">stratvision.org</p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Phone</h4>
-                  <p className="text-hero-foreground/90">+1 (555) 123-4567</p>
+                  <p className="text-hero-foreground/90">+919833300266</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Office</h4>
+                  <h4 className="font-semibold mb-2">Headquarters</h4>
                   <p className="text-hero-foreground/90">
-                    123 Business District<br />
-                    Metropolitan City, MC 12345
+                    Mumbai, Maharashtra, India<br />
+                    Dubai, UAE
                   </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2">Industry</h4>
+                  <p className="text-hero-foreground/90">Business Consulting and Services</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2">Founded</h4>
+                  <p className="text-hero-foreground/90">2024</p>
                 </div>
               </div>
             </div>
