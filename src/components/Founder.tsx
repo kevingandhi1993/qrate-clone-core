@@ -9,16 +9,16 @@ const Founder = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
-              <h3 className="text-2xl font-bold text-foreground mb-6">About the Founder</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Kevin Gandhi - Founder & Managing Partner</h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  [Add founder's biography here - their background, experience, and vision for StratVision Consulting]
+                  Kevin Gandhi is the founder of StratVision Consulting, with over 10 years of experience in management consulting, business transformation, and digital strategy across India and Southeast Asia. After completing his MBA from the Indian Institute of Management Bangalore and qualifying as a Chartered Accountant, Kevin began his consulting career and quickly established himself as a strategy expert, working with leading firms such as EY-Parthenon, Goldman Sachs, Deloitte, and PwC.
                 </p>
                 <p>
-                  [Include their professional journey, key achievements, and what drives their passion for helping businesses grow and transform]
+                  From 2010 to 2015, Kevin gained extensive experience in strategy consulting, focusing on revenue growth, cost optimization, and business transformation for clients in sectors such as consumer goods, tech, retail, and finance. In 2015, he relocated to Singapore, where he continued to advise top multinational organizations, leading projects in operational efficiency, digital transformation, and due diligence across APAC markets.
                 </p>
                 <p>
-                  [Mention their expertise in strategic consulting, business transformation, and commitment to delivering exceptional results for clients]
+                  In 2019, Kevin founded StratVision Consulting, a boutique firm specializing in management consulting for clients ranging from fast-growing startups to established global brands. Under his leadership, StratVision has delivered high-impact results in market entry, business growth, process optimization, and commercial due diligence, earning a reputation for hands-on leadership and sustainable value creation throughout Asia-Pacific.
                 </p>
               </div>
             </div>
