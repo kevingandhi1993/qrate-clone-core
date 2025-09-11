@@ -12,10 +12,10 @@ const Founder = () => {
               <h3 className="text-2xl font-bold text-foreground mb-6">Kevin Gandhi - Founder & Managing Partner</h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Kevin Gandhi is the founder of StratVision Consulting, with over 10 years of experience in management consulting, business transformation, and digital strategy across India and Southeast Asia. After completing his MBA from the Indian Institute of Management Bangalore and qualifying as a Chartered Accountant, Kevin began his consulting career and quickly established himself as a strategy expert, working with leading firms such as EY-Parthenon, Goldman Sachs, Deloitte, and PwC.
+                  Kevin Gandhi is the founder of StratVision Consulting, with over 10 years of experience in management consulting, business transformation, and digital strategy across India and Southeast Asia. After completing his MBA from the Indian Institute of Management Bangalore and qualifying as a Chartered Accountant, Kevin began his consulting career and established himself as a strategy expert, working with leading firms in Singapore and India, such as EY-Parthenon, Goldman Sachs, Deloitte, and PwC.
                 </p>
                 <p>
-                  In 2019, Kevin founded StratVision Consulting, a boutique firm specializing in management consulting for clients ranging from fast-growing startups to established global brands. Under his leadership, StratVision has delivered high-impact results in market entry, business growth, process optimization, and commercial due diligence, earning a reputation for hands-on leadership and sustainable value creation throughout Asia-Pacific.
+                  In 2024, Kevin founded StratVision Consulting, a boutique firm specializing in management consulting for clients ranging from fast-growing startups to established global brands. Under his leadership, StratVision has delivered high-impact results in market entry, business growth, AI business transformation, ESG, process optimization, and commercial due diligence, earning a reputation for hands-on leadership and sustainable value creation throughout Asia-Pacific.
                 </p>
               </div>
             </div>
