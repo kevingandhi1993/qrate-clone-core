@@ -28,6 +28,10 @@ const Services = () => {
               <ul className="space-y-4 text-muted-foreground">
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <span>Implement customised AI solutions to automate your sales and operations; leverage Analytics and Insights for better decision making</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
                   <span>Crafting growth strategies for companies to scale sustainably and implementing it</span>
                 </li>
                 <li className="flex items-start">
