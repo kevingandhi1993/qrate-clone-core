@@ -19,7 +19,7 @@ const Contact = () => {
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold mb-2">Email</h4>
-                  <p className="text-hero-foreground/90">info@stratvisionconsulting.com</p>
+                  <p className="text-hero-foreground/90">kevin@stratvision.org</p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Phone</h4>
