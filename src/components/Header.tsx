@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-
 const Header = () => {
 
   return <header className="bg-background border-b border-border">
@@ -12,12 +10,6 @@ const Header = () => {
           <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
           <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
           <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
-        </div>
-        
-        <div className="flex items-center space-x-4">
-          <Button variant="default" size="sm">
-            Get Started
-          </Button>
         </div>
         
       </nav>
