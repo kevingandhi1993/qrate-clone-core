@@ -2,8 +2,59 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useForm } from "react-hook-form";
+import { useToast } from "@/components/ui/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+
+type FormValues = {
+  firstName: string;
+  lastName: string;
+  company?: string;
+  email?: string;
+  message?: string;
+};
+
 const Contact = () => {
-  return <section id="contact" className="py-20 bg-hero text-hero-foreground">
+  const { toast } = useToast();
+  const { register, handleSubmit, reset, formState: { isSubmitting } } = useForm<FormValues>({
+    defaultValues: { firstName: "", lastName: "", company: "", email: "", message: "" }
+  });
+
+  const onSubmit = async (values: FormValues) => {
+    let insertPayload: any = {
+      ["First name"]: values.firstName,
+      ["Last name"]: values.lastName,
+      ["Company name"]: values.company || null,
+      email: values.email || null,
+      message: values.message || null,
+    };
+
+    let { error } = await (supabase as any).from("Contact Information").insert([insertPayload]);
+
+    // Retry with alternative casing for the column name if needed
+    if (error && /column \"Last name\" does not exist/i.test(error.message)) {
+      insertPayload = {
+        ["First name"]: values.firstName,
+        ["last name"]: values.lastName,
+        ["Company name"]: values.company || null,
+        email: values.email || null,
+        message: values.message || null,
+      };
+      const retry = await (supabase as any).from("Contact Information").insert([insertPayload]);
+      error = retry.error;
+    }
+
+    if (error) {
+      console.error("Contact insert error:", error);
+      toast({ title: "Failed to send message", description: error.message, variant: "destructive" });
+      return;
+    }
+    toast({ title: "Message sent", description: "We will get back to you shortly." });
+    reset();
+  };
+
+  return (
+    <section id="contact" className="py-20 bg-hero text-hero-foreground">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
@@ -36,22 +87,25 @@ const Contact = () => {
               <CardHeader>
                 <CardTitle className="text-hero-foreground">Send us a Message</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <Input placeholder="First Name" className="bg-hero-foreground/10 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-foreground/60" />
-                  <Input placeholder="Last Name" className="bg-hero-foreground/10 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-foreground/60" />
-                </div>
-                <Input placeholder="Email" className="bg-hero-foreground/10 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-foreground/60" />
-                <Input placeholder="Company" className="bg-hero-foreground/10 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-foreground/60" />
-                <Textarea placeholder="How can we help you?" rows={4} className="bg-hero-foreground/10 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-foreground/60" />
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Send Message
-                </Button>
+              <CardContent>
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <Input placeholder="First Name" className="bg-hero-foreground/10 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-foreground/60" {...register('firstName', { required: true })} />
+                    <Input placeholder="Last Name" className="bg-hero-foreground/10 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-foreground/60" {...register('lastName', { required: true })} />
+                  </div>
+                  <Input placeholder="Email" type="email" className="bg-hero-foreground/10 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-foreground/60" {...register('email')} />
+                  <Input placeholder="Company" className="bg-hero-foreground/10 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-foreground/60" {...register('company')} />
+                  <Textarea placeholder="How can we help you?" rows={4} className="bg-hero-foreground/10 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-foreground/60" {...register('message')} />
+                  <Button type="submit" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </Button>
+                </form>
               </CardContent>
             </Card>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default Contact;
