@@ -16,9 +16,11 @@ const Hero = () => {
         <p className="text-xl md:text-2xl mb-8 text-hero-foreground/90 max-w-3xl mx-auto">
           Your trusted growth advisor delivering strategic consulting services that drive sustainable business impact.
         </p>
-        <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-          Get in Touch
-        </Button>
+        <a href="#contact" className="inline-block">
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            Get in Touch
+          </Button>
+        </a>
       </div>
     </section>
   );
