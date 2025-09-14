@@ -21,36 +21,32 @@ const Contact = () => {
   });
 
   const onSubmit = async (values: FormValues) => {
-    let insertPayload: any = {
-      ["First name"]: values.firstName,
-      ["Last name"]: values.lastName,
-      ["Company name"]: values.company || null,
-      email: values.email || null,
-      message: values.message || null,
-    };
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([{
+          first_name: values.firstName,
+          last_name: values.lastName,
+          company: values.company || null,
+          email: values.email || null,
+          message: values.message || null
+        }]);
 
-    let { error } = await (supabase as any).from("Contact Information").insert([insertPayload]);
+      if (error) throw error;
 
-    // Retry with alternative casing for the column name if needed
-    if (error && /column \"Last name\" does not exist/i.test(error.message)) {
-      insertPayload = {
-        ["First name"]: values.firstName,
-        ["last name"]: values.lastName,
-        ["Company name"]: values.company || null,
-        email: values.email || null,
-        message: values.message || null,
-      };
-      const retry = await (supabase as any).from("Contact Information").insert([insertPayload]);
-      error = retry.error;
-    }
-
-    if (error) {
+      toast({ 
+        title: "Message sent", 
+        description: "We will get back to you shortly." 
+      });
+      reset();
+    } catch (error) {
       console.error("Contact insert error:", error);
-      toast({ title: "Failed to send message", description: error.message, variant: "destructive" });
-      return;
+      toast({ 
+        title: "Failed to send message", 
+        description: "Please try again later.", 
+        variant: "destructive" 
+      });
     }
-    toast({ title: "Message sent", description: "We will get back to you shortly." });
-    reset();
   };
 
   return (
