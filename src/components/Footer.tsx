@@ -34,7 +34,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="tel:+919833300266" className="hover:text-primary transition-colors">
-                  +91 9833300266
+                  +91 9833300266|+971 563494288
                 </a>
               </li>
             </ul>
@@ -44,8 +44,8 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-foreground">Company Info</h4>
             <ul className="space-y-2 text-muted-foreground text-sm">
               <li><strong>Industry:</strong> Business Consulting and Services</li>
-              <li><strong>Headquarters:</strong> Mumbai, Maharashtra, India</li>
-              <li><strong>Dubai, UAE</strong></li>
+              <li><strong>Headquarters:</strong> Enam Sambhav,4th Floor,G Block,Bandra Kurla Complex,Mumbai 400051,India</li>
+              <li><strong> One Central ,9th Floor ,Trade Centre 2 , Offices 4, Dubai, UAE</strong></li>
               <li><strong>Founded:</strong> 2024</li>
             </ul>
           </div>
